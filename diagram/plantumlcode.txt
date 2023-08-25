@@ -1,0 +1,25 @@
+@startuml
+package "Big Data System" {
+
+    [Infrastructure] -down-> [Computing & Analytics]
+    [Infrastructure] -down-> [Data Organization & Distribution]
+    [Infrastructure] -down-> [Networking]
+    [Infrastructure] -down-> [Storage]
+    [Infrastructure] -down-> [Operations]
+    
+    [Operations] -down-> [DataOps]
+
+    [Computing & Analytics] -down-> [Transactions & Consistency]
+    [Transactions & Consistency] -down-> [CAP Theorem]
+    [Transactions & Consistency] -down-> [ACID Transactions]
+    [Transactions & Consistency] -down-> [BASE Transactions]
+    [Transactions & Consistency] -down-> [Data Consistency]
+
+    [Data Consistency] -down-> [Communication]
+    [Communication] -down-> [Service Discovery]
+    [Communication] -down-> [Tail Latency]
+    [Communication] -down-> [Kafka]
+    [Communication] -down-> [REST-based Communication]
+
+}
+@enduml
