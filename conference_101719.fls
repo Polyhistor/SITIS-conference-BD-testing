@@ -299,6 +299,9 @@ INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/adobe/t
 INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map
 INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
+INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT conference_101719.aux
 INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+INPUT /opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
