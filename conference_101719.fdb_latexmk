@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1692958931 "/Users/pataei/Desktop/Projects/sitisConference/Conference-LaTeX-template_10-17-19/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692958931 0
-  "/Users/pataei/Desktop/Projects/sitisConference/Conference-LaTeX-template_10-17-19/conference_101719.tex" 1692958931 14346 a9f4db67f5a4195c64574e388b666441 ""
+["pdflatex"] 1692958984 "/Users/pataei/Desktop/Projects/sitisConference/Conference-LaTeX-template_10-17-19/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1692958985 0
+  "/Users/pataei/Desktop/Projects/sitisConference/Conference-LaTeX-template_10-17-19/conference_101719.tex" 1692958984 14244 cd047132c3247423c5cc1c7082bd0749 ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1678549815 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1678549815 4609045 74543da1ab9350ba886fce0af49a2cfd ""
@@ -44,8 +44,8 @@
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
   "/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884066 8197b5e86c7bf6d7352283907f10d5c2 ""
   "IEEEtran.cls" 1440596924 288304 b67b6fc6c2abb39f9b461923f5199343 ""
-  "conference_101719.aux" 1692958931 1090 f5dff5975430a9e0e0bba1856cbda63d "pdflatex"
-  "conference_101719.tex" 1692958931 14346 a9f4db67f5a4195c64574e388b666441 ""
+  "conference_101719.aux" 1692958985 1090 df5bfd1b0a657bfbf31261e4a7949fb6 "pdflatex"
+  "conference_101719.tex" 1692958984 14244 cd047132c3247423c5cc1c7082bd0749 ""
   "media/three-layer-bd.png" 1692958408 44248 4e9df2bf0238a5766be04eef40fb5d6f ""
   (generated)
   "conference_101719.aux"
