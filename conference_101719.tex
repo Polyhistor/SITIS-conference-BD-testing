@@ -50,16 +50,33 @@ Yet, a broad spectrum of concerns often goes unaddressed in the realm of big dat
 
 Big Data (BD) systems commonly navigate through two primary data handling realms: stream and batch processing. Stream processing, also known as rapid processing, addresses urgent tasks like identifying potentially fraudulent credit card activity. On the other hand, batch processing takes its time, ideal for in-depth analyses such as regression studies.
 
-The chosen mode of processing, be it stream or batch, depends largely on three data attributes: its variety, volume, and velocity. For instance, real-time algorithms applied in stream processing often employ stateful in-memory data structures, like Hyperloglog, for instantaneous computations. Further customizations in streaming might involve strategies such as tuple-at-a-time or micro-batch processing. Contrarily, batch processing might avoid these techniques. Instead, an architect could lean towards methods like MapReduce or Bulk Synchronous Parallel (BSP) for more volume and velocity-driven data needs.
+In Big Data systems, the decision between stream or batch processing is primarily dictated by the three V's of data: variety, volume, and velocity.
 
-The literature presents various layers of granularity when discussing data handling. While certain studies, such as S19, delve deep into the intricacies of the data handling pipeline, others like S15 simplify it to terms like 'batch' or 'stream' processing.
+Variety refers to the many forms of data, ranging from structured data like databases to unstructured data such as text or images. Stream processing might handle a diverse set of live data feeds, such as social media posts, sensor data from IoT devices, or real-time e-commerce transactions. These data types necessitate different processing paradigms. An algorithm sifting through real-time tweets to gauge sentiment would require an entirely different setup than one analyzing images from surveillance cameras to detect anomalies.
 
-Furthermore, we discerned two main approaches to data handling. One methodology integrates both batch and stream processing within a singular architectural frame, while the other differentiates between the two. This distinction is evident in the Lambda and Kappa architectural philosophies and their derived Reference Architectures (RAs). Some RAs, like S17, even introduce a triad: the batch node, streaming node, and interactive node.
+Volume alludes to the sheer amount of data. In scenarios with massive influxes of data, stream processing, utilizing technologies like Apache Kafka or Apache Flink, can offer real-time insights without storing vast quantities of information first. Conversely, batch processing is beneficial for situations where large chunks of accumulated data need comprehensive analysis. Consider the example of log files accumulated over a month from a popular application. Analyzing this data for patterns, anomalies, or insights would typically employ batch processing methods. Tools like Apache Hadoop or Apache Spark's batch processing capabilities can process this vast data efficiently.
 
-In terms of BD interface communication, two patterns emerge. Some RAs showcase a simple 'access layer', as seen in S21 and S17. Others present multifaceted components tailored to unique needs, such as Machine Learning (ML) or Business Intelligence (BI), as observed in S16.
+Velocity pertains to the speed at which new data is generated and collected. High-velocity scenarios, such as stock trading platforms, necessitate stream processing for near-instantaneous responses. Here, technologies like Storm or Flink, which are designed for high-speed data inflows, become crucial. They can, for instance, quickly analyze patterns to inform immediate trading decisions. On the other hand, in cases where data arrives at a more steady and predictable rate, batch processing methods using techniques like MapReduce or BSP would be more apt. An example here might be the monthly sales data from a chain of retail stores, where data is accumulated over a more extended period and then processed to derive insights for the next month.
 
-A few RAs emphasize the delineation between input/output interfaces and those between nodes, like s22. Yet, others might simply indicate interfaces with basic graphical cues, such as arrows. Despite their importance, contemporary RAs appear to lack a detailed focus on these interfaces, with only a few exceptions like s15's 'provider-request interface'.
+To add another layer of complexity, certain scenarios merge both processing modes. A hybrid approach, known as the Lambda architecture, combines the latency benefits of stream processing with the thoroughness and accuracy of batch processing. For instance, a weather forecasting system might employ stream processing to provide immediate weather updates from live sensors and batch processing to analyze historical data and refine its forecasting models.
 
+The literature presents various layers of granularity when discussing data handling. While certain studies delve deep into the intricacies of the data handling pipeline, others simplify it to terms like 'batch' or 'stream' processing.
+
+Furthermore, we discerned two main approaches to data handling. One methodology integrates both batch and stream processing within a singular architectural frame, while the other differentiates between the two. This distinction is evident in the Lambda and Kappa architectural philosophies and their derived RAs. Some RAs even introduce a triad: the batch node, streaming node, and interactive node.
+
+In terms of BD interface communication, two patterns emerge. Some RAs showcase a simple 'access layer'. Others present multifaceted components tailored to unique needs, such as Machine Learning (ML) or Business Intelligence (BI). Moreover, succesfully approaches of software engineering such as domain-driven design and micro-services patterns are being progressingly applied to the realm of data engineering. One good example of this is the study conducted in \cite{b4} and data mesh \cite{b5}.
+
+\subsection{Data Infrastructure Considerations in Big Data Architectures}
+
+Infrastructure, an essential facet discussed across various Reference Architectures (RAs), exhibits variation in its depiction among different authors. While some delineate this component using standard architectural description languages, others imply its presence subtly without direct specification. Some architectures even delve deeply into both infrastructure and platform layers.
+
+A salient component in the NIST Big Data RA is the "big data framework provider," which covers aspects such as computing, analytics, data organization, distribution, and key infrastructures like networking, computing, and storage.
+
+It's more apt to conceptualize the Big Data (BD) infrastructure as a foundational layer, sketching out the possible computing and networking architecture for a Big Data system. Given the industry's tilt towards distributed paradigms and horizontal scaling, this layer's significance surges. This landscape prompts architects to grapple with challenges tied to the CAP theorem, ACID and BASE transactions, data consistency, service discovery, and tail latency. This raises the question: Should the Big Data system be event-driven, leveraging platforms like Kafka? Or should it remain anchored to REST-based communication? A pivotal concern also lies in understanding the overhead implications of context switches and inter-service networking.
+
+Gleaning insights from our Systematic Literature Review (SLR), we observed the BD infrastructure surfacing in a myriad of forms and methodologies. While one could argue that infrastructure is an inherent component across various systems, its design nuances are particularly accentuated in BD systems due to their characteristic distributed nature.
+
+A dimension that often slips through the cracks is DataOps. Despite its transformative potential in seamlessly automating and delivering data engineering tasks, its presence seems sparse in many Big Data RAs. Another revelation is that not every RA fully harnesses the benefits of comprehensive distributed architectures, even though Big Data systems could greatly capitalize on this design approach. An exception to this trend heavily borrows from the patterns of event-driven microservices architecture.
 
 \begin{thebibliography}{00}
 
@@ -67,7 +84,9 @@ A few RAs emphasize the delineation between input/output interfaces and those be
 \bibitem{b1} P. Ataei and A. Litchfield, "The State of Big Data Reference Architectures: A Systematic Literature Review," in IEEE Access, vol. 10, pp. 113789-113807, 2022, doi: 10.1109/ACCESS.2022.3217557.
 \bibitem{b2} Ataei, Pouya and Litchfield, Alan T., "Big Data Reference Architectures, a systematic literature review" (2020). ACIS 2020 Proceedings. 30.
 \bibitem{b3} Framework, D. N. B. D. I. (2015). Draft nist big data interoperability framework: Volume 6, reference architecture. NIST Special Publication, 1500, 6.
-
+\bibitem{b4} Ataei, Pouya and Litchfield, Alan, "Towards a domain-driven distributed reference architecture for big data
+systems" (2023). AMCIS 2023 Proceedings. 11.
+\bibitem[b5]{Dehghani, Z. (2022). Data Mesh. Marcombo}
 
 
 \end{thebibliography}
